@@ -1,0 +1,126 @@
+.bible-container {
+  width: 100%;
+  max-width: 760px;
+  min-height: 100vh;
+  padding: 2rem 80px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 2.5px 2.5px 5px -2.5px rgb(0 0 0 / 30%),
+    -2.5px 2.5px 5px -2.5px rgb(0 0 0 / 30%);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  width: 100%;
+}
+.book-item {
+  padding: 10px;
+  font-size: 16px;
+  color: #fff;
+  background: #3e6ba3;
+  text-decoration: none;
+}
+.book-item:hover {
+  background: #213c5e !important;
+}
+.bible-type {
+  margin-bottom: 0.25em;
+  padding: 0.5em 0;
+  color: grey;
+  font-size: 0.85em;
+}
+@media screen and (max-width: 800px) {
+  .bible-container {
+    padding: 2rem 32px;
+  }
+  .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .book-item {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.go-back {
+  width: 100%;
+}
+.go-back a {
+  color: #4477a1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.go-back a:hover .text {
+  text-decoration: underline;
+}
+.go-back a .text {
+  padding-left: 10px;
+
+  display: inline-block;
+}
+
+p.desc {
+  color: grey;
+  font-size: 1.1em;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+.chapters {
+  display: flex;
+  flex-wrap: wrap;
+}
+.chapters a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+.chapters a .card {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #dbd8d3;
+  justify-content: center;
+  align-items: center;
+  color: #64605d;
+  margin: 0 2px 2px 0;
+}
+.chapters a .card:hover {
+  background-color: #eef3fa;
+  border-color: #2878bb;
+}
+h4.secondary {
+  color: #64605d;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.text-content {
+  font-size: 17px;
+  line-height: 140%;
+}
+.text-content b {
+  font-size: 20px;
+}
+.search-result-box a h3 {
+  color: #2878bb;
+  padding: 1rem 0 0.4rem;
+}
+.search-result-box {
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.search-result-box .sliced {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

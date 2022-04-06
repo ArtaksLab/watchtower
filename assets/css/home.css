@@ -1,0 +1,152 @@
+.main {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+.main > .left {
+  flex: 1;
+  height: 100%;
+  background-color: #f2f1ef;
+  border-right: 1px solid #cacaca;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.main > .right {
+  height: 100%;
+  background-color: #fff;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.main .left {
+  padding: 48px;
+}
+.main .left h1.title {
+  font-size: 1.9rem;
+  color: #a0a0a0;
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+.main .left h2 {
+  font-size: 2.2em;
+  color: #65605e;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.main .left h3 {
+  font-weight: 200;
+  font-size: 1.5em;
+  color: #a0a0a0;
+  padding-bottom: 20px;
+}
+.main .left p.desc {
+  font-size: 1.1rem;
+  color: #65605e;
+  margin-bottom: 0.5em;
+}
+
+.main .right {
+  padding: 48px;
+}
+.main .right .date-buttons {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.date-buttons a {
+  color: #2878bb;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #dae2e5;
+  height: 28px;
+}
+.date-buttons a:hover {
+  background-color: #cadee8;
+}
+.date-buttons .prev-btn {
+  border-radius: 15px;
+  width: 86px;
+  z-index: 1;
+  margin-right: -20px;
+  height: 24px;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+.date-buttons .current-btn {
+  z-index: 2;
+  width: 230px;
+  border: 2px solid #fff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+.date-buttons .next-btn {
+  border-radius: 15px;
+  width: 86px;
+  z-index: 1;
+  margin-left: -20px;
+  height: 24px;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+.article {
+  margin-top: 2rem;
+}
+
+.article h2 {
+  font-size: 1.7rem;
+}
+.article .desc {
+  margin-top: 1rem;
+  font-family: initial;
+  font-size: 1.1rem;
+}
+.article .text {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .main > .left {
+    background-color: #799fcc;
+    flex: unset;
+    border: none;
+    padding: 20px 12px;
+  }
+  .main > .left h1 {
+    display: none;
+  }
+  .main > .left h3 {
+    display: none;
+  }
+  .main > .left p.desc {
+    display: none;
+  }
+  .main > .left h2 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  .main > .right {
+    padding: 24px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .date-buttons .current-btn {
+    width: 150px;
+  }
+  .date-buttons .prev-btn,
+  .date-buttons .next-btn {
+    width: 76px;
+  }
+  .article h2 {
+    font-size: 1.4rem;
+  }
+}

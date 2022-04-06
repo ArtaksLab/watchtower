@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+  <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon" />
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="main-container">
+    <%- include('_header') %>
+
+      <div class="main">
+        <div class="left">
+          <h1 class="title">Watchtower</h1>
+          <h2>ONLINE LIBRARY</h2>
+          <h3>Welcome.</h3>
+          <p class="desc">
+            This is a research tool for publications in various languages
+            produced by Jehovah's Witnesses.
+          </p>
+        </div>
+        <div class="right">
+          <div class="date-buttons">
+            <a class="prev-btn" href="/?day=p&date=<%= date %>">
+              <%- include('_chevron_left') %>
+            </a><a class="current-btn" href="/">Today</a><a class="next-btn" href="/?day=n&date=<%= date %>">
+              <%- include('_chevron_right') %>
+            </a>
+          </div>
+          <% if(article){ %>
+            <div class="article">
+              <h2>
+                <%= title %>
+              </h2>
+              <p class="desc"><i>
+                  <%= article.description %>
+                </i></p>
+              <p class="text">
+                <%= article.content %>
+              </p>
+            </div>
+            <% } %>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>

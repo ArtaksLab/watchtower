@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon" />
+  <title>Create Book</title>
+</head>
+
+<body>
+  <%- include('_navigation') %>
+    <div class="container">
+
+      <h1 class="mb-4">New Book</h1>
+
+      <form action="/admin/books/create" method="POST">
+
+
+        <div class="form-group">
+          <label for="type">Type</label>
+          <select name="type" id="type" class="form-control">
+            <option value="hebrew_aramaic_scriptures">HEBREW-ARAMAIC SCRIPTURES</option>
+            <option value="christian_greek_scriptures">CHRISTIAN GREEK SCRIPTURES</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input name="title" id="title" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="label">Label</label>
+          <input name="label" id="label" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="chapters">Chapters</label>
+          <input name="chapters" id="chapters" type="number" class="form-control" />
+        </div>
+        <div class="form-group">
+          <div>Color</div>
+          <div style="margin-right: 20px; " class="form-check">
+            <input id="3e6ba3" checked name="color" value="#3e6ba3" type="radio" class="form-check-input" />
+            <label for='3e6ba3'
+              style="background-color: #3e6ba3; width: 50px; height: 50px; display: inline-block;"></label>
+          </div>
+          <div style="margin-right: 20px;" class="form-check">
+            <input id="6b94c7" name="color" value="#6b94c7" type="radio" class="form-check-input" />
+            <label for="6b94c7"
+              style="background-color: #6b94c7; width: 50px; height: 50px; display: inline-block;"></label>
+          </div>
+          <div style="margin-right: 20px;" class="form-check">
+            <input id="4e7fbc" name="color" value="#4e7fbc" type="radio" class="form-check-input" />
+            <label for="4e7fbc"
+              style="background-color: #4e7fbc; width: 50px; height: 50px; display: inline-block;"></label>
+          </div>
+
+
+        </div>
+        <a href="/admin/books" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+
+</body>
+
+</html>

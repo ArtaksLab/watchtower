@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon" />
+  <title>Admin Books</title>
+</head>
+
+<body>
+  <%- include('_navigation') %>
+    <div class="container">
+      <h1 class="mb-4">Books</h1>
+      <a href="/admin/books/new" class="btn btn-success">New Book</a>
+
+      <% data.forEach(item=> { %>
+        <div style="margin-top: 2rem;">
+          <h4 style="margin-bottom: 1rem;">
+            <%= item.label %>
+          </h4>
+          <div style="display: flex; width: 100%; flex-wrap: wrap; margin-top: 2rem;">
+            <% item.book.forEach(book=> { %>
+              <a href="/admin/books/<%= book._id %>"
+                style="padding: 10px; margin: 0 5px 5px 0;text-decoration: none; background-color: <%= book.color %>; color: #fff;">
+                <%= book.label %>
+              </a>
+              <% }) %>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+
+
+</body>
+
+</html>

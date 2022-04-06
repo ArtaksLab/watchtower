@@ -1,0 +1,7 @@
+   <script>
+      const el = document.getElementById('testik')
+      var getTest = '<%- JSON.stringify(obj) %>'
+      console.log(JSON.parse(getTest));  
+      let objik = JSON.parse(getTest)
+      el.innerHTML= objik.a.c
+    </script>

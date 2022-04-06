@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/bible.css" />
+
+    <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon" />
+    <title>Bible</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <%- include('_header') %>
+
+            <div class="main">
+                <div class="bible-container">
+                    <h1>English Bibles</h1>
+
+                    <% data.forEach(item=> { %>
+                        <div style="margin-top: 2rem;">
+                            <p class="bible-type">
+                                <%= item.label %>
+                            </p>
+                            <div class="book-grid">
+                                <% item.book.forEach(book=> { %>
+                                    <a class="book-item" href="/bible/<%= book._id %>"
+                                        style="background: <%= book.color %>;">
+                                        <%= book.label %>
+                                    </a>
+                                    <% }) %>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+    </div>
+</body>
+
+</html>

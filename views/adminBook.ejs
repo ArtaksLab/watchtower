@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon" />
+  <title>Admin Book</title>
+</head>
+
+<body>
+  <%- include('_navigation') %>
+    <div class="container">
+      <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+        <h1 class="mb-4">
+          <%= book.title %>
+        </h1>
+        <form action="/admin/books/<%=book._id%>?_method=DELETE" method="POST" class="d-inline">
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+      <h4>Chapters:</h4>
+      <div style="display: flex; flex-wrap: wrap; width: 100%;">
+        <% for(var i=1; i<book.chapters; i++) {%>
+          <a href="/admin/chapter?book=<%= book._id %>&chapter=<%= i %>">
+            <div class="card"
+              style="width: 40px; height: 40px; margin: 0 5px 5px 0; display: flex;justify-content: center; align-items: center; ">
+              <%= i %>
+            </div>
+          </a>
+          <% } %>
+      </div>
+    </div>
+
+
+</body>
+
+</html>

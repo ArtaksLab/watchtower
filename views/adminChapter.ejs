@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <link rel="shortcut icon" href="assets/imgs/logo.svg" type="image/x-icon" />
+    <title>Chapter</title>
+</head>
+
+<body>
+    <%- include('_navigation') %>
+        <div class="container">
+            <h1 class="mb-4">
+                <%= data.title %>
+            </h1>
+
+            <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+                <h4>Chapter: <%= data.chapter %>
+                </h4>
+                <% if(data._id) {%>
+                    <form action="/admin/chapter/<%=data._id%>?_method=DELETE" method="POST" class="d-inline">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <% }%>
+
+            </div>
+            <form action="/admin/chapter/create" method="POST">
+
+
+                <input type="text" name="bookId" hidden value="<%=bookId%>" />
+                <input type="number" name="chapterNumber" hidden value="<%=data.chapter%>" />
+                <% if(data._id) {%>
+                    <input type="text" hidden name="id" value="<%=data._id%>">
+                    <% }%>
+
+                        <div class="form-group">
+                            <label for="content">Content</label>
+                            <textarea name="content" id="content" style="min-height: 300px;"
+                                class="form-control"><%=data.content%></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <a href="/admin/books/<%=bookId%>" class="btn btn-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Save</button>
+
+                            </div>
+                        </div>
+            </form>
+        </div>
+
+</body>
+
+</html>
