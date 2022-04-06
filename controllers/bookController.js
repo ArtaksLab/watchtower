@@ -19,14 +19,14 @@ exports.getAdminBooks = async (req, res) => {
       type: "christian_greek_scriptures",
     });
 
-    if (hebrew_aramaic_scriptures?.length) {
+    if (hebrew_aramaic_scriptures && hebrew_aramaic_scriptures.length) {
       data.push({
         label: bookTypes["hebrew_aramaic_scriptures"],
         book: hebrew_aramaic_scriptures,
       });
     }
 
-    if (christian_greek_scriptures?.length) {
+    if (christian_greek_scriptures && christian_greek_scriptures.length) {
       data.push({
         label: bookTypes["christian_greek_scriptures"],
         book: christian_greek_scriptures,
@@ -174,14 +174,14 @@ exports.getBooks = async (req, res) => {
       type: "christian_greek_scriptures",
     });
 
-    if (hebrew_aramaic_scriptures?.length) {
+    if (hebrew_aramaic_scriptures && hebrew_aramaic_scriptures.length) {
       data.push({
         label: bookTypes["hebrew_aramaic_scriptures"],
         book: hebrew_aramaic_scriptures,
       });
     }
 
-    if (christian_greek_scriptures?.length) {
+    if (christian_greek_scriptures && christian_greek_scriptures.length) {
       data.push({
         label: bookTypes["christian_greek_scriptures"],
         book: christian_greek_scriptures,
