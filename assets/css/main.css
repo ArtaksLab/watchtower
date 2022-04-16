@@ -205,3 +205,65 @@ ul.main-menu li .icon img {
     flex-direction: column;
   }
 }
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  background: #ededed;
+  width: 100%;
+  padding: 12px;
+}
+
+footer .container a {
+  color: #4477a1;
+  text-decoration: none;
+}
+
+footer .container a:hover {
+  text-decoration: underline;
+}
+
+.privacy {
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px 120px;
+  background: #fff;
+}
+@media screen and (max-width: 800px) {
+  .privacy {
+    padding: 32px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .privacy {
+    padding: 32px 24px;
+  }
+}
+.privacy p {
+  font-size: 14px;
+  color: #64605d;
+}
+.privacy h3 {
+  font-size: 20px;
+}
+
+.privacy h6 {
+  font-size: 16px;
+}
+
+.privacy ul {
+  padding-left: 48px;
+  font-size: 14px;
+  color: #64605d;
+  line-height: 140%;
+}
+.privacy ul li {
+  margin-bottom: 4px;
+}
