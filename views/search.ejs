@@ -15,15 +15,21 @@
     <title>
         Search
     </title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2962649023428921"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="main-container">
         <%- include('_header') %>
-
+            <!-- Recomended -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-2962649023428921"
+                data-ad-slot="7861720094" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
             <div class="main">
                 <div class="bible-container">
-
                     <% data.forEach(item=> { %>
                         <div class="search-result-box">
                             <a href="/bible/chapter?book=<%= item.bookId %>&chapter=<%= item.chapter %>">
